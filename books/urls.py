@@ -1,8 +1,9 @@
 from django.urls import path
 from . import views
-
+from .views import books_list_view
 
 urlpatterns = [
+    path('',books_list_view,name='books_list_view'),
     path('emoji/', views.emodji, name='emoji'),
     path('text/', views.text, name='text'),
     path('image/', views.image, name='image'),
