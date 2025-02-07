@@ -4,16 +4,16 @@ from  . import models
 
 
 #book_list
-def books_list_view(request):
+def books_list(request):
     if request.method == "GET":
         query = models.Books.objects.all().order_by('-id')
         context_object_name = {
-            'books_list': query,
+            'book_list': query,
         }
         return render(request, template_name = 'book.html',
                       context= context_object_name)
 
-def books_detail_view(request, id):
+def books_detail(request, id):
     if request.method == "GET":
         query = get_object_or_404(models.Books, id=id)
         context_object_name = {
