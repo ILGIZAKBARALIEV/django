@@ -4,6 +4,7 @@ from .views import books_list
 
 urlpatterns = [
     path('',books_list,name='books_list'),
+    path('books_detail/<int:id>/',views.books_detail,name='books_detail'),
     path('emoji/', views.emodji, name='emoji'),
     path('text/', views.text, name='text'),
     path('image/', views.image, name='image'),
