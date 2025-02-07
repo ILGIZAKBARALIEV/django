@@ -19,7 +19,7 @@ def books_detail(request, id):
     if request.method == "GET":
         query = get_object_or_404(models.Books, id=id)
         context_object_name = {
-            'book_list_id': query,
+            'books_list_id': query,
         }
         return render(request,
                       template_name = 'book_detail.html',
