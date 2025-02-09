@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import render
 from django.http import HttpResponse
 from  . import models
 from django.shortcuts import get_object_or_404
@@ -14,14 +15,14 @@ def books_list(request):
         return render(request, template_name = 'book.html',
                       context= context_object_name)
 
-def books_detail(request,id ):
+def books_detail(request, id):
     if request.method == "GET":
         query = get_object_or_404(models.Books, id=id)
         context_object_name = {
-            'books_detail_id': query,
+            'books_list_id': query,
         }
         return render(request,
-                      template_name = 'book_detail.html',
+                      template_name = 'books_detail.html',
                       context= context_object_name)
 
 
